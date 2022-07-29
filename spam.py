@@ -9,7 +9,7 @@ def spamfoo(_, message):
     app.delete_messages(chat_id=message.chat.id, message_ids=message.id, revoke=True)
     try:
         times = int(message.text.split(' ')[1])
-        msgtext = message.text.split(' ')[2]
+        msgtext = message.text.split(' ', 2)[2]
         while a < times:
             try:
                 message.reply_text(msgtext)
